@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kita Systems - Premium Water Treatment Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8faff 0%, #e8f4fd 25%, #fff5e6 50%, #f0f9ff 100%);
+            color: #1a202c;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px 0;
+            box-shadow: 0 4px 30px rgba(26, 84, 144, 0.08);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #e3f2fd;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1a5490, #2196F3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(26, 84, 144, 0.2);
+        }
+
+        .logo h1 {
+            background: linear-gradient(135deg, #1a5490, #2196F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #495057;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #1a5490;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #1a5490, #2196F3);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #1a5490, #2196F3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 84, 144, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 84, 144, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(26, 84, 144, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(33, 150, 243, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #1a5490, #2196F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #6c757d;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1a5490, #2196F3);
+            color: white;
+            box-shadow: 0 4px 20px rgba(26, 84, 144, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #495057;
+            border: 2px solid #e9ecef;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1a5490, #2196F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8faff 0%, #fff5e6 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #1a5490, #2196F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border-color: #1a5490;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #1a5490, #2196F3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a202c;
+        }
+
+        .service-card p {
+            color: #6c757d;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* Products Preview Section */
+        .products-preview {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .preview-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .preview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .preview-image {
+            height: 200px;
+            background: linear-gradient(135deg, #e8f4fd, #d4e9f2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #1a5490;
+        }
+
+        .preview-content {
+            padding: 25px;
+        }
+
+        .preview-card h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+
+        .preview-card p {
+            color: #6c757d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .features-preview {
+            list-style: none;
+        }
+
+        .features-preview li {
+            color: #495057;
+            font-size: 14px;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .features-preview i {
+            color: #1a5490;
+            font-size: 12px;
+        }
+
+        /* Page Styles */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Testimonial Cards */
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #1a5490;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #495057;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            color: #1a5490;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #2196F3;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #343a40;
+            color: #adb5bd;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8faff 0%, #e8f4fd 100%);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1a5490;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .preview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">KS</div>
+                <h1>Kita Systems</h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#about" class="nav-link" onclick="showPage('about')">About</a></li>
+                    <li><a href="#products" class="nav-link" onclick="showPage('products')">Products</a></li>
+                    <li><a href="#services" class="nav-link" onclick="showPage('services')">Services</a></li>
+                    <li><a href="#technology" class="nav-link" onclick="showPage('technology')">Technology</a></li>
+                    <li><a href="#testimonials" class="nav-link" onclick="showPage('testimonials')">Testimonials</a></li>
+                    <li><a href="#contact" class="cta-button" onclick="showPage('contact')">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Pure Water for a Healthier Tomorrow</h1>
+                    <p class="hero-subtitle">Professional Water Treatment Solutions</p>
+                    <p class="hero-description">
+                        Leading manufacturer of stainless steel water treatment systems. Over 10 years of excellence in providing safe, pure water solutions for residential and industrial applications.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary" onclick="showPage('products')">
+                            <i class="fas fa-tint"></i>
+                            Explore Products
+                        </a>
+                        <a href="#" class="btn btn-secondary" onclick="showPage('contact')">
+                            <i class="fas fa-phone"></i>
+                            Get Free Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Satisfied Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Non-Toxic Treatment</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Why Choose Kita Systems</h2>
+                    <p class="section-subtitle">
+                        Excellence in stainless steel water treatment technology
+                    </p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Premium Quality</h3>
+                        <p>SS 304 grade stainless steel vessels ensuring 100% non-toxic water treatment. Industry-leading quality standards.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Industry Leader</h3>
+                        <p>Trusted by Nasaka, Blue Mount, Bluebird, and Hindware. Over a decade of proven excellence.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Expert Service</h3>
+                        <p>Professional installation and maintenance by certified technicians. 24/7 toll-free support available.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Preview -->
+        <section class="products-preview">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Products</h2>
+                    <p class="section-subtitle">
+                        Innovative stainless steel water treatment solutions
+                    </p>
+                </div>
+                <div class="preview-grid">
+                    <div class="preview-card">
+                        <div class="preview-image">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <div class="preview-content">
+                            <h4>Water Cooler RO+UV</h4>
+                            <p>Advanced 7-stage purification system</p>
+                            <ul class="features-preview">
+                                <li><i class="fas fa-check"></i>RO+UV Technology</li>
+                                <li><i class="fas fa-check"></i>7-Stage Purification</li>
+                                <li><i class="fas fa-check"></i>Reduces TDS & Heavy Metals</li>
+                                <li><i class="fas fa-check"></i>Removes Pathogens</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="preview-card">
+                        <div class="preview-image">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div class="preview-content">
+                            <h4>SS Water Softener</h4>
+                            <p>Premium stainless steel construction</p>
+                            <ul class="features-preview">
+                                <li><i class="fas fa-check"></i>SS 304 Grade Material</li>
+                                <li><i class="fas fa-check"></i>Non-toxic Treatment</li>
+                                <li><i class="fas fa-check"></i>Scale Prevention</li>
+                                <li><i class="fas fa-check"></i>Long-lasting Performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="preview-card">
+                        <div class="preview-image">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="preview-content">
+                            <h4>Industrial Sand Filter</h4>
+                            <p>High-capacity industrial filtration</p>
+                            <ul class="features-preview">
+                                <li><i class="fas fa-check"></i>Stainless Steel Vessel</li>
+                                <li><i class="fas fa-check"></i>High Capacity</li>
+                                <li><i class="fas fa-check"></i>Easy Maintenance</li>
+                                <li><i class="fas fa-check"></i>Durable Construction</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="#" class="btn btn-primary" onclick="showPage('products')">
+                        <i class="fas fa-th-large"></i>
+                        View All Products
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>About Kita Systems</h1>
+                    <p class="hero-subtitle">Spreading Happiness Through Quality Water Solutions</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Our Story</h3>
+                        <p style="text-align: left;">KITA is a Japanese word meaning "happiness" - the foundation of our business philosophy. At Kita Systems India Pvt. Ltd., we deliver happiness through exceptional water treatment technology.</p>
+                        <p style="text-align: left;">Established over ten years ago, we rapidly grew to serve industry leaders including Nasaka (Okaya), Blue Mount, Bluebird, and Hindware.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Our Innovation</h3>
+                        <p style="text-align: left;">We develop advanced water treatment solutions that minimize recurring costs while maximizing performance and output.</p>
+                        <p style="text-align: left;">As the only manufacturer offering fully developed water softeners and sand filters with stainless steel vessels, we ensure completely non-toxic water treatment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years of Excellence</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Customer Support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PRODUCTS PAGE -->
+    <div id="products" class="page">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Our Products</h1>
+                    <p class="hero-subtitle">Premium Stainless Steel Water Treatment Systems</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-preview">
+            <div class="container">
+                <div class="preview-grid">
+                    <div class="preview-card">
+                        <div class="preview-image">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <div class="preview-content">
+                            <h4>Water Cooler RO+UV</h4>
+                            <p>Advanced purification with 7-stage filtration</p>
+                            <ul class="features-preview">
+                                <li><i class="fas fa-check"></i>RO+UV Technology</li>
+                                <li><i class="fas fa-check"></i>7-Stage Purification</li>
+                                <li><i class="fas fa-check"></i>Reduces TDS & Heavy Metals</li>
+                                <li><i class="fas fa-check"></i>Removes Bacteria & Viruses</li>
+                            </ul>
+                            <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="showPage('contact')">Request Quote</button>
+                        </div>
+                    </div>
+
+                    <div class="preview-card">
+                        <div class="preview-image">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="preview-content">
+                            <h4>Carbon Filter</h4>
+                            <p>Activated carbon filtration</p>
+                            <ul class="features-preview">
+                                <li><i class="fas fa-check"></i>Chlorine Removal</li>
+                                <li><i class="fas fa-check"></i>Odor Elimination</li>
+                                <li><i class="fas fa-check"></i>Taste Enhancement</li>
+                                <li><i class="fas fa-check"></i>Chemical Reduction</li>
+                            </ul>
+                            <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="showPage('contact')">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="services" class="page">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Our Services</h1>
+                    <p class="hero-subtitle">Comprehensive Water Treatment Solutions</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>24/7 Customer Support</h3>
+                        <p>Round-the-clock toll-free support for all your water treatment requirements. Our dedicated team ensures immediate assistance.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Professional Installation</h3>
+                        <p>Expert on-site installation by certified professionals ensuring optimal system performance and longevity.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h3>Maintenance & Service</h3>
+                        <p>Comprehensive maintenance services to ensure your water treatment systems operate at peak efficiency.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Water Quality Testing</h3>
+                        <p>Detailed water analysis to recommend the perfect treatment solution for your specific needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 60px 0; background: rgba(255, 255, 255, 0.9);">
+            <div class="container">
+                <div style="background: linear-gradient(135deg, #1a5490, #2196F3); color: white; padding: 60px; border-radius: 20px; text-align: center;">
+                    <h2 style="font-size: 36px; margin-bottom: 20px;">Need Service?</h2>
+                    <p style="font-size: 20px; margin-bottom: 20px;">Call our toll-free number for immediate assistance</p>
+                    <div style="font-size: 48px; font-weight: bold; margin: 20px 0;">1800-270-1121</div>
+                    <button class="btn btn-primary" style="background: white; color: #1a5490;" onclick="showPage('contact')">Schedule Service</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- TECHNOLOGY PAGE -->
+    <div id="technology" class="page">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Our Technology</h1>
+                    <p class="hero-subtitle">Advanced 7-Stage Water Purification System</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">RO+UV Purification Process</h2>
+                    <p class="section-subtitle">Seven stages of water purification excellence</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon" style="font-size: 30px; font-weight: bold;">1</div>
+                        <h4 style="color: #6c757d; font-size: 14px; margin-bottom: 10px;">STAGE 1-2</h4>
+                        <h3>Sediment & Pre-Carbon Filter</h3>
+                        <p>Removes dust, dirt, rust, and chlorine from water</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" style="font-size: 30px; font-weight: bold;">2</div>
+                        <h4 style="color: #6c757d; font-size: 14px; margin-bottom: 10px;">STAGE 3-4</h4>
+                        <h3>RO Membrane</h3>
+                        <p>Reduces TDS, heavy metals, arsenic, and lead</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" style="font-size: 30px; font-weight: bold;">3</div>
+                        <h4 style="color: #6c757d; font-size: 14px; margin-bottom: 10px;">STAGE 5-6</h4>
+                        <h3>Post-Carbon & UV</h3>
+                        <p>Eliminates bacteria, viruses, and enhances taste</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon" style="font-size: 30px; font-weight: bold;">4</div>
+                        <h4 style="color: #6c757d; font-size: 14px; margin-bottom: 10px;">STAGE 7</h4>
+                        <h3>Final Polish</h3>
+                        <p>Crystal clear, pure, safe drinking water</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section" style="background: rgba(255, 255, 255, 0.9);">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card" style="text-align: left;">
+                        <h3>Stainless Steel Innovation</h3>
+                        <p style="margin-bottom: 20px;">Kita Systems pioneers SS 304 grade stainless steel vessels for water treatment, ensuring:</p>
+                        <ul class="features-preview" style="list-style: none;">
+                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #1a5490; margin-right: 10px;"></i>100% Non-toxic Water Treatment</li>
+                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #1a5490; margin-right: 10px;"></i>Superior Durability and Longevity</li>
+                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #1a5490; margin-right: 10px;"></i>Corrosion-resistant Performance</li>
+                            <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #1a5490; margin-right: 10px;"></i>Environmentally Friendly</li>
+                        </ul>
+                    </div>
+                    <div class="service-card" style="text-align: left;">
+                        <h3>Contaminants Removed</h3>
+                        <p style="margin-bottom: 20px;">Our advanced purification technology effectively eliminates:</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div>✓ Hardness</div>
+                            <div>✓ High TDS</div>
+                            <div>✓ Arsenic</div>
+                            <div>✓ Lead</div>
+                            <div>✓ Mercury</div>
+                            <div>✓ Bacteria</div>
+                            <div>✓ Viruses</div>
+                            <div>✓ Pesticides</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- TESTIMONIALS PAGE -->
+    <div id="testimonials" class="page">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Client Testimonials</h1>
+                    <p class="hero-subtitle">What Our Customers Say</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"Kita SS water softener is best. Awesome product with excellent quality!"</p>
+                        <div class="testimonial-author">- Rajesh Kumar</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"Every product with best quality and affordable prices. Highly recommended!"</p>
+                        <div class="testimonial-author">- Priya Sharma</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"Awesome product along with best service ever seen. Very satisfied!"</p>
+                        <div class="testimonial-author">- Amit Patel</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 60px 0; background: rgba(255, 255, 255, 0.9);">
+            <div class="container">
+                <div style="background: linear-gradient(135deg, #1a5490, #2196F3); color: white; padding: 60px; border-radius: 20px; text-align: center;">
+                    <h2 style="font-size: 36px; margin-bottom: 20px;">Join Our Satisfied Customers</h2>
+                    <p style="font-size: 20px; margin-bottom: 30px;">Experience the Kita Systems difference</p>
+                    <button class="btn btn-primary" style="background: white; color: #1a5490;" onclick="showPage('contact')">Get Started</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Contact Us</h1>
+                    <p class="hero-subtitle">Get in Touch With Our Team</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3 style="font-size: 36px; font-weight: 700; margin-bottom: 20px; background: linear-gradient(135deg, #1a5490, #2196F3); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Ready to Transform Your Water?</h3>
+                        <p style="color: #6c757d; font-size: 18px; margin-bottom: 30px;">
+                            Get started with a free consultation and discover how our water treatment solutions can improve your life.
+                        </p>
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: #1a202c; margin-bottom: 10px; font-weight: 600;">What you get:</h4>
+                            <ul style="list-style: none; color: #495057;">
+                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #1a5490; margin-right: 10px;"></i>Free water quality testing</li>
+                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #1a5490; margin-right: 10px;"></i>Custom solution recommendations</li>
+                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #1a5490; margin-right: 10px;"></i>Professional installation</li>
+                                <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #1a5490; margin-right: 10px;"></i>24/7 customer support</li>
+                            </ul>
+                        </div>
+                        <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-top: 30px;">
+                            <div style="margin-bottom: 20px;">
+                                <h5 style="color: #1a202c; margin-bottom: 5px; font-weight: 600;"><i class="fas fa-phone" style="color: #1a5490; margin-right: 10px;"></i>Phone</h5>
+                                <p style="color: #6c757d; font-size: 16px;">Toll-Free: <strong>1800-270-1121</strong></p>
+                                <p style="color: #6c757d; font-size: 16px;">Mobile: <strong>+91 9289043483</strong></p>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <h5 style="color: #1a202c; margin-bottom: 5px; font-weight: 600;"><i class="fas fa-envelope" style="color: #1a5490; margin-right: 10px;"></i>Email</h5>
+                                <p style="color: #6c757d; font-size: 16px;">support@kitasystems.com</p>
+                            </div>
+                            <div>
+                                <h5 style="color: #1a202c; margin-bottom: 5px; font-weight: 600;"><i class="fas fa-map-marker-alt" style="color: #1a5490; margin-right: 10px;"></i>Address</h5>
+                                <p style="color: #6c757d; font-size: 14px;">E-1/255, Khasra No 106 Pusta 41/2<br>Sonia Vihar, Karawal Nagar<br>Delhi - 110094, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <h3 style="margin-bottom: 30px; color: #1a5490; font-weight: 700;">Send Us a Message</h3>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Interest</label>
+                            <select required>
+                                <option value="">Select a product</option>
+                                <option>Water Cooler RO+UV</option>
+                                <option>Water Softener</option>
+                                <option>Sand Filter</option>
+                                <option>Iron Filter</option>
+                                <option>Carbon Filter</option>
+                                <option>Custom Solution</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="5" placeholder="Tell us about your requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <div class="logo-icon">KS</div>
+                        <h4 style="color: white; margin-left: 12px; font-size: 20px;">Kita Systems</h4>
+                    </div>
+                    <p style="color: #adb5bd; line-height: 1.6;">
+                        Leading provider of premium stainless steel water treatment solutions, helping homes and businesses achieve pure, safe water through innovative technology.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                        <li><a href="#" onclick="showPage('products')">Products</a></li>
+                        <li><a href="#" onclick="showPage('services')">Services</a></li>
+                        <li><a href="#" onclick="showPage('technology')">Technology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showPage('products')">Water Cooler</a></li>
+                        <li><a href="#" onclick="showPage('products')">Water Softener</a></li>
+                        <li><a href="#" onclick="showPage('products')">Sand Filter</a></li>
+                        <li><a href="#" onclick="showPage('products')">Iron Filter</a></li>
+                        <li><a href="#" onclick="showPage('products')">Carbon Filter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p style="color: #adb5bd;">Toll-Free: 1800-270-1121</p>
+                    <p style="color: #adb5bd;">Mobile: +91 9289043483</p>
+                    <p style="color: #adb5bd;">support@kitasystems.com</p>
+                    <p style="color: #adb5bd; margin-top: 15px;">Delhi - 110094, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 KITA SYSTEMS INDIA PRIVATE LIMITED. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageName) {
+            var pages = document.querySelectorAll('.page');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].classList.remove('active');
+            }
+            document.getElementById(pageName).classList.add('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your inquiry! We will contact you shortly.');
+                this.reset();
+            });
+        }
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .preview-card, .testimonial-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html> margin-top: 15px;" onclick="showPage('contact')">Request Quote</button>
+                        </div>
+                    </div>
+
+                    <div class="preview-card">
+                        <div class="preview-image">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div class="preview-content">
+                            <h4>SS Water Softener</h4>
+                            <p>Premium stainless steel construction</p>
+                            <ul class="features-preview">
+                                <li><i class="fas fa-check"></i>SS 304 Grade Material</li>
+                                <li><i class="fas fa-check"></i>Non-toxic Treatment</li>
+                                <li><i class="fas fa-check"></i>Scale Prevention</li>
+                                <li><i class="fas fa-check"></i>Long-lasting Performance</li>
+                            </ul>
+                            <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="showPage('contact')">Request Quote</button>
+                        </div>
+                    </div>
+
+                    <div class="preview-card">
+                        <div class="preview-image">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="preview-content">
+                            <h4>Sand Filter</h4>
+                            <p>Industrial-grade filtration system</p>
+                            <ul class="features-preview">
+                                <li><i class="fas fa-check"></i>Stainless Steel Vessel</li>
+                                <li><i class="fas fa-check"></i>High Capacity</li>
+                                <li><i class="fas fa-check"></i>Easy Maintenance</li>
+                                <li><i class="fas fa-check"></i>Durable Construction</li>
+                            </ul>
+                            <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="showPage('contact')">Request Quote</button>
+                        </div>
+                    </div>
+
+                    <div class="preview-card">
+                        <div class="preview-image">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="preview-content">
+                            <h4>Iron Filter</h4>
+                            <p>Effective iron removal system</p>
+                            <ul class="features-preview">
+                                <li><i class="fas fa-check"></i>Iron Removal</li>
+                                <li><i class="fas fa-check"></i>Oxidation Technology</li>
+                                <li><i class="fas fa-check"></i>Auto Backwash</li>
+                                <li><i class="fas fa-check"></i>Low Maintenance</li>
+                            </ul>
+                            <button class="btn btn-primary" style="width: 100%;
