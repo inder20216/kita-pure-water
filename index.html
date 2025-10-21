@@ -20,20 +20,20 @@
             --light: #f8f9fa;
             --white: #ffffff;
             --gray: #6c757d;
+            --light-gray: #e9ecef;
             --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
             --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
             --shadow-lg: 0 8px 32px rgba(0,0,0,0.15);
         }
 
         body {
-            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.7;
             color: var(--dark);
             overflow-x: hidden;
             background: var(--white);
         }
 
-        /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
         }
@@ -42,42 +42,35 @@
         nav {
             position: fixed;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
             z-index: 1000;
             box-shadow: var(--shadow-sm);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
 
         nav.scrolled {
-            background: rgba(255, 255, 255, 0.98);
             box-shadow: var(--shadow-md);
         }
 
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1.2rem 3rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo-section {
-            display: flex;
-            align-items: center;
-        }
-
         .logo {
-            height: 70px;
+            height: 65px;
             width: auto;
-            object-fit: contain;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 3rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
@@ -86,9 +79,8 @@
             color: var(--dark);
             font-weight: 500;
             font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            position: relative;
             transition: color 0.3s ease;
+            position: relative;
         }
 
         .nav-links a::before {
@@ -96,10 +88,10 @@
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: -8px;
+            bottom: -5px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
+            background: var(--primary-blue);
             transition: width 0.3s ease;
         }
 
@@ -113,17 +105,20 @@
 
         .nav-cta {
             background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: white;
+            color: white !important;
             padding: 0.7rem 1.8rem;
             border-radius: 6px;
             font-weight: 600;
-            transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(30, 136, 229, 0.3);
         }
 
         .nav-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(30, 136, 229, 0.4);
+        }
+
+        .nav-cta::before {
+            display: none;
         }
 
         .menu-toggle {
@@ -144,49 +139,32 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 50%, #e3f2fd 100%);
+            padding: 120px 2rem 4rem;
             position: relative;
-            padding-top: 100px;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(30, 136, 229, 0.05), rgba(0, 188, 212, 0.05));
-            clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
 
         .hero-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 4rem 3rem;
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             align-items: center;
-            position: relative;
-            z-index: 1;
         }
 
         .hero-content h1 {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             font-weight: 700;
             color: var(--deep-blue);
-            line-height: 1.15;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
-            letter-spacing: -1px;
         }
 
         .hero-content .subtitle {
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             color: var(--gray);
-            margin-bottom: 2.5rem;
-            font-weight: 400;
+            margin-bottom: 2rem;
             line-height: 1.6;
         }
 
@@ -194,9 +172,9 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin: 3rem 0;
+            margin: 2.5rem 0;
             padding: 2rem 0;
-            border-top: 1px solid rgba(0,0,0,0.1);
+            border-top: 1px solid var(--light-gray);
         }
 
         .stat-item {
@@ -234,7 +212,6 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            letter-spacing: 0.3px;
         }
 
         .btn-primary {
@@ -259,77 +236,38 @@
             color: white;
         }
 
+        /* Hero Visual - Simplified for Mobile */
         .hero-visual {
-            position: relative;
-            height: 600px;
-        }
-
-        .hero-image-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
             background: white;
             border-radius: 12px;
+            padding: 2rem;
             box-shadow: var(--shadow-lg);
-            overflow: hidden;
-        }
-
-        .hero-image-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(135deg, transparent 0%, rgba(30, 136, 229, 0.03) 50%, transparent 100%);
-            transform: rotate(45deg);
-        }
-
-        .mockup-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
-            position: relative;
-            padding: 3rem;
-        }
-
-        .ro-system-visual {
-            width: 100%;
-            height: 100%;
+            min-height: 500px;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            gap: 2rem;
-            position: relative;
-            z-index: 1;
         }
 
-        .system-diagram {
+        .process-flow {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            width: 100%;
-            max-width: 500px;
+            margin-bottom: 2rem;
         }
 
-        .stage-box {
-            background: white;
+        .flow-step {
+            background: var(--light);
             padding: 1.5rem 1rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 8px;
             text-align: center;
             border: 2px solid var(--primary-blue);
             position: relative;
         }
 
-        .stage-box::after {
+        .flow-step::after {
             content: '→';
             position: absolute;
-            right: -1.8rem;
+            right: -1.7rem;
             top: 50%;
             transform: translateY(-50%);
             font-size: 1.5rem;
@@ -337,114 +275,61 @@
             font-weight: bold;
         }
 
-        .stage-box:nth-child(3)::after,
-        .stage-box:nth-child(6)::after {
+        .flow-step:nth-child(3)::after,
+        .flow-step:nth-child(6)::after {
             content: '';
         }
 
-        .stage-box:nth-child(3)::before {
+        .flow-step:nth-child(3)::before {
             content: '↓';
             position: absolute;
             left: 50%;
-            bottom: -2.2rem;
+            bottom: -2rem;
             transform: translateX(-50%);
             font-size: 1.5rem;
             color: var(--primary-blue);
             font-weight: bold;
         }
 
-        .stage-icon {
+        .flow-icon {
             font-size: 2rem;
             margin-bottom: 0.5rem;
         }
 
-        .stage-name {
+        .flow-label {
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--dark);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        .purity-indicator {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: white;
-            padding: 1.5rem 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin-top: 1rem;
-        }
-
-        .purity-bar {
-            flex: 1;
-            height: 12px;
-            background: #e0e0e0;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .purity-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
-            width: 99.9%;
-            border-radius: 10px;
-        }
-
-        .purity-text {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            white-space: nowrap;
-        }
-
-        .tech-badge {
-            position: absolute;
-            background: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-md);
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            z-index: 10;
-        }
-
-        .tech-badge:nth-child(2) {
-            top: 5%;
-            right: 5%;
-        }
-
-        .tech-badge:nth-child(3) {
-            bottom: 5%;
-            left: 5%;
-        }
-
-        .badge-icon {
-            width: 40px;
-            height: 40px;
+        .purity-badge {
             background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: white;
-            font-size: 1.2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .purity-badge h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .purity-badge p {
+            opacity: 0.9;
+            font-size: 1rem;
         }
 
         /* Features Section */
         .features {
-            padding: 8rem 3rem;
+            padding: 6rem 2rem;
             background: white;
         }
 
         .section-header {
             max-width: 800px;
-            margin: 0 auto 5rem;
+            margin: 0 auto 4rem;
             text-align: center;
         }
 
@@ -458,15 +343,14 @@
         }
 
         .section-title {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--deep-blue);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
         }
 
         .section-description {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--gray);
             line-height: 1.7;
         }
@@ -476,15 +360,15 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .feature-card {
-            padding: 2.5rem;
+            padding: 2rem;
             background: var(--light);
-            border-radius: 12px;
+            border-radius: 10px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid transparent;
         }
 
         .feature-card:hover {
@@ -494,34 +378,34 @@
         }
 
         .feature-icon {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
         }
 
         .feature-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--dark);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             font-weight: 600;
         }
 
         .feature-card p {
             color: var(--gray);
-            line-height: 1.7;
-            font-size: 0.98rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* Products Section */
         .products {
-            padding: 8rem 3rem;
-            background: linear-gradient(180deg, var(--light) 0%, white 100%);
+            padding: 6rem 2rem;
+            background: var(--light);
         }
 
         .products-grid {
@@ -529,79 +413,61 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
+            gap: 2.5rem;
         }
 
         .product-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow-sm);
-            transition: all 0.4s ease;
-            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
         }
 
         .product-card:hover {
             box-shadow: var(--shadow-lg);
-            transform: translateY(-8px);
+            transform: translateY(-5px);
         }
 
         .product-header {
-            padding: 2.5rem;
+            padding: 2rem;
             background: linear-gradient(135deg, var(--deep-blue), var(--primary-blue));
             color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 50%;
         }
 
         .product-header h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.8rem;
-            position: relative;
-            z-index: 1;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
         }
 
         .product-capacity {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.9;
-            font-weight: 500;
         }
 
         .product-body {
-            padding: 2.5rem;
+            padding: 2rem;
         }
 
         .product-description {
             color: var(--gray);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
 
         .product-features {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .product-features li {
-            padding: 0.7rem 0;
+            padding: 0.6rem 0;
             color: var(--dark);
             display: flex;
             align-items: center;
-            gap: 1rem;
-            font-size: 0.95rem;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--light-gray);
         }
 
         .product-features li:last-child {
@@ -610,8 +476,8 @@
 
         .product-features li::before {
             content: '✓';
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
             color: white;
             border-radius: 50%;
@@ -619,239 +485,80 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             flex-shrink: 0;
-        }
-
-        /* Process Section */
-        .process {
-            padding: 8rem 3rem;
-            background: white;
-        }
-
-        .process-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
-            position: relative;
-        }
-
-        .process-grid::before {
-            content: '';
-            position: absolute;
-            top: 60px;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: linear-gradient(90deg, 
-                var(--primary-blue) 0%, 
-                var(--primary-blue) 25%,
-                var(--accent-cyan) 25%,
-                var(--accent-cyan) 50%,
-                var(--primary-blue) 50%,
-                var(--primary-blue) 75%,
-                var(--accent-cyan) 75%,
-                var(--accent-cyan) 100%
-            );
-            z-index: 0;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .process-number {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 1.5rem;
-            background: white;
-            border: 3px solid var(--primary-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            box-shadow: var(--shadow-md);
-        }
-
-        .process-step:nth-child(even) .process-number {
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
-        }
-
-        .process-step h3 {
-            font-size: 1.2rem;
-            color: var(--dark);
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
-
-        .process-step p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* About Section */
-        .about {
-            padding: 8rem 3rem;
-            background: var(--deep-blue);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.03)" stroke-width="1" fill="none"/></svg>');
-            opacity: 0.3;
-        }
-
-        .about-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 5rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .about-content h2 {
-            font-size: 2.8rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-
-        .about-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-metrics {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .metric-box {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .metric-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, white, var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .metric-label {
-            font-size: 0.95rem;
-            opacity: 0.85;
         }
 
         /* Contact Section */
         .contact {
-            padding: 8rem 3rem;
-            background: linear-gradient(135deg, var(--light) 0%, white 100%);
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 6rem 2rem;
+            background: white;
         }
 
         .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 4rem;
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .contact-card {
-            background: white;
-            padding: 3rem 2rem;
-            border-radius: 12px;
+            background: var(--light);
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(0,0,0,0.06);
             transition: all 0.3s ease;
+            border: 1px solid transparent;
         }
 
         .contact-card:hover {
             box-shadow: var(--shadow-md);
             transform: translateY(-5px);
+            border-color: var(--primary-blue);
         }
 
         .contact-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.2rem;
             background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: white;
         }
 
         .contact-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--dark);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             font-weight: 600;
         }
 
         .contact-card p {
             color: var(--gray);
             margin-bottom: 0.5rem;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .contact-card a {
             color: var(--primary-blue);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             display: block;
             margin-top: 0.5rem;
-        }
-
-        .contact-card a:hover {
-            color: var(--accent-cyan);
         }
 
         /* Footer */
         footer {
             background: var(--dark);
             color: white;
-            padding: 4rem 3rem 2rem;
+            padding: 3rem 2rem 1.5rem;
         }
 
         .footer-container {
@@ -859,20 +566,20 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 4rem;
-            margin-bottom: 3rem;
+            gap: 3rem;
+            margin-bottom: 2rem;
         }
 
         .footer-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
             font-weight: 600;
         }
 
         .footer-section p {
             opacity: 0.8;
-            line-height: 1.7;
-            font-size: 0.95rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
         }
 
         .footer-links {
@@ -880,7 +587,7 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.7rem;
         }
 
         .footer-links a {
@@ -888,111 +595,87 @@
             text-decoration: none;
             opacity: 0.8;
             transition: all 0.3s ease;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .footer-links a:hover {
             opacity: 1;
             color: var(--accent-cyan);
-            padding-left: 5px;
+            padding-left: 3px;
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0.7;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* Responsive Design */
-        @media (max-width: 1200px) {
-            .hero-container,
-            .about-container {
+        @media (max-width: 1024px) {
+            .hero-container {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
 
-            .hero-visual {
-                height: 400px;
-            }
-
-            .system-diagram {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .stage-box::after {
-                display: none;
-            }
-
-            .stage-box:nth-child(2)::after {
-                content: '↓';
-                display: block;
-                position: absolute;
-                left: 50%;
-                bottom: -1.8rem;
-                right: auto;
-                top: auto;
-                transform: translateX(-50%);
-                font-size: 1.5rem;
-                color: var(--primary-blue);
-                font-weight: bold;
-            }
-
-            .stage-box:nth-child(3)::before {
-                display: none;
-            }
-
-            .stage-box:nth-child(4)::after {
-                content: '↓';
-                display: block;
-                position: absolute;
-                left: 50%;
-                bottom: -1.8rem;
-                right: auto;
-                top: auto;
-                transform: translateX(-50%);
-                font-size: 1.5rem;
-                color: var(--primary-blue);
-                font-weight: bold;
-            }
-
-            .tech-badge {
-                padding: 0.8rem 1.2rem;
-                font-size: 0.8rem;
-            }
-
-            .tech-badge:nth-child(2) {
-                top: 2%;
-                right: 2%;
-            }
-
-            .tech-badge:nth-child(3) {
-                bottom: 2%;
-                left: 2%;
-            }
-
-            .badge-icon {
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
+            .hero-content h1 {
+                font-size: 2.8rem;
             }
 
             .products-grid {
                 grid-template-columns: 1fr;
             }
 
-            .process-grid {
+            .features-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .process-grid::before {
+            .process-flow {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.2rem;
+            }
+
+            .flow-step::after {
                 display: none;
+            }
+
+            .flow-step:nth-child(2)::after {
+                content: '↓';
+                display: block;
+                position: absolute;
+                left: 50%;
+                bottom: -1.5rem;
+                right: auto;
+                top: auto;
+                transform: translateX(-50%);
+            }
+
+            .flow-step:nth-child(3)::before {
+                display: none;
+            }
+
+            .flow-step:nth-child(4)::after {
+                content: '↓';
+                display: block;
+                position: absolute;
+                left: 50%;
+                bottom: -1.5rem;
+                right: auto;
+                top: auto;
+                transform: translateX(-50%);
             }
         }
 
-        @media (max-width: 968px) {
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .logo {
+                height: 50px;
+            }
+
             .nav-links {
                 display: none;
                 position: absolute;
@@ -1001,9 +684,9 @@
                 width: 100%;
                 background: white;
                 flex-direction: column;
-                padding: 2rem;
+                padding: 1.5rem;
                 box-shadow: var(--shadow-md);
-                gap: 1rem;
+                gap: 0.5rem;
             }
 
             .nav-links.active {
@@ -1014,81 +697,96 @@
                 display: flex;
             }
 
+            .hero {
+                padding: 100px 1.5rem 3rem;
+            }
+
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1.5rem 0;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
             }
 
             .hero-visual {
-                height: 500px;
+                padding: 1.5rem;
+                min-height: auto;
             }
 
-            .system-diagram {
+            .process-flow {
                 grid-template-columns: 1fr;
                 gap: 1rem;
-                max-width: 280px;
             }
 
-            .stage-box {
-                padding: 1rem 0.8rem;
+            .flow-step {
+                padding: 1.2rem 0.8rem;
             }
 
-            .stage-box::after {
+            .flow-step::after {
                 content: '↓';
+                display: block;
                 position: absolute;
                 left: 50%;
-                bottom: -1.5rem;
+                bottom: -1.3rem;
                 right: auto;
                 top: auto;
                 transform: translateX(-50%);
                 font-size: 1.2rem;
-                color: var(--primary-blue);
-                font-weight: bold;
             }
 
-            .stage-box:nth-child(6)::after {
+            .flow-step:nth-child(6)::after {
                 display: none;
             }
 
-            .stage-box:nth-child(2)::after,
-            .stage-box:nth-child(3)::before,
-            .stage-box:nth-child(4)::after {
+            .flow-step:nth-child(2)::after,
+            .flow-step:nth-child(3)::before,
+            .flow-step:nth-child(4)::after {
                 content: '↓';
                 display: block;
             }
 
-            .stage-icon {
+            .flow-icon {
                 font-size: 1.5rem;
             }
 
-            .stage-name {
+            .flow-label {
                 font-size: 0.7rem;
             }
 
-            .purity-indicator {
-                padding: 1rem 1.5rem;
-                font-size: 0.85rem;
+            .purity-badge {
+                padding: 1.2rem;
             }
 
-            .purity-text {
+            .purity-badge h3 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-description {
                 font-size: 1rem;
-            }
-
-            .tech-badge {
-                position: static;
-                margin-top: 1rem;
-            }
-
-            .tech-badge:nth-child(2),
-            .tech-badge:nth-child(3) {
-                position: static;
-            }
-
-            .mockup-placeholder {
-                padding: 2rem 1rem;
-            }
-
-            .ro-system-visual {
-                gap: 1.5rem;
             }
 
             .features-grid {
@@ -1103,54 +801,9 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-stats {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .about-metrics {
-                grid-template-columns: 1fr;
-            }
         }
 
-        @media (max-width: 480px) {
-            .nav-container {
-                padding: 1rem 1.5rem;
-            }
-
-            .logo {
-                height: 50px;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content .subtitle {
-                font-size: 1.1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .cta-group {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        /* Utility Classes */
+        /* Animation */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -1167,14 +820,11 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo-section">
-                <img src="https://i.postimg.cc/L6yWC1ZN/Media-2.jpg" alt="WePureIt Logo" class="logo">
-            </div>
+            <img src="https://i.postimg.cc/L6yWC1ZN/Media-2.jpg" alt="WePureIt Logo" class="logo">
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#products">Products</a></li>
-                <li><a href="#process">Process</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact" class="nav-cta">Get Quote</a></li>
             </ul>
@@ -1215,61 +865,36 @@
             </div>
 
             <div class="hero-visual">
-                <div class="hero-image-container">
-                    <div class="mockup-placeholder">
-                        <div class="ro-system-visual">
-                            <div class="system-diagram">
-                                <div class="stage-box">
-                                    <div class="stage-icon">🔵</div>
-                                    <div class="stage-name">Sediment Filter</div>
-                                </div>
-                                <div class="stage-box">
-                                    <div class="stage-icon">⚫</div>
-                                    <div class="stage-name">Carbon Filter</div>
-                                </div>
-                                <div class="stage-box">
-                                    <div class="stage-icon">🟡</div>
-                                    <div class="stage-name">Pre-Treatment</div>
-                                </div>
-                                
-                                <div class="stage-box">
-                                    <div class="stage-icon">💧</div>
-                                    <div class="stage-name">RO Membrane</div>
-                                </div>
-                                <div class="stage-box">
-                                    <div class="stage-icon">💎</div>
-                                    <div class="stage-name">Polishing</div>
-                                </div>
-                                <div class="stage-box">
-                                    <div class="stage-icon">✨</div>
-                                    <div class="stage-name">Pure Water</div>
-                                </div>
-                            </div>
-
-                            <div class="purity-indicator">
-                                <span style="font-weight: 600; color: var(--gray);">Purity Level:</span>
-                                <div class="purity-bar">
-                                    <div class="purity-fill"></div>
-                                </div>
-                                <span class="purity-text">99.9%</span>
-                            </div>
-                        </div>
-
-                        <div class="tech-badge">
-                            <div class="badge-icon">⚡</div>
-                            <div>
-                                <div style="font-weight: 700;">Energy Efficient</div>
-                                <div style="font-size: 0.8rem; opacity: 0.7;">40% Less Power</div>
-                            </div>
-                        </div>
-                        <div class="tech-badge">
-                            <div class="badge-icon">🎯</div>
-                            <div>
-                                <div style="font-weight: 700;">ISO Certified</div>
-                                <div style="font-size: 0.8rem; opacity: 0.7;">Quality Assured</div>
-                            </div>
-                        </div>
+                <div class="process-flow">
+                    <div class="flow-step">
+                        <div class="flow-icon">🔵</div>
+                        <div class="flow-label">Sediment Filter</div>
                     </div>
+                    <div class="flow-step">
+                        <div class="flow-icon">⚫</div>
+                        <div class="flow-label">Carbon Filter</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon">🟡</div>
+                        <div class="flow-label">Pre-Treatment</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon">💧</div>
+                        <div class="flow-label">RO Membrane</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon">💎</div>
+                        <div class="flow-label">Polishing</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon">✨</div>
+                        <div class="flow-label">Pure Water</div>
+                    </div>
+                </div>
+
+                <div class="purity-badge">
+                    <h3>99.9%</h3>
+                    <p>Purification Efficiency</p>
                 </div>
             </div>
         </div>
@@ -1280,44 +905,44 @@
         <div class="section-header">
             <div class="section-label">Why Choose WePureIt</div>
             <h2 class="section-title">Advanced Water Treatment Technology</h2>
-            <p class="section-description">Comprehensive purification solutions backed by cutting-edge technology, rigorous quality standards, and decades of engineering expertise.</p>
+            <p class="section-description">Comprehensive purification solutions backed by cutting-edge technology and rigorous quality standards.</p>
         </div>
 
         <div class="features-grid">
             <div class="feature-card fade-in">
                 <div class="feature-icon">💧</div>
                 <h3>Multi-Stage Filtration</h3>
-                <p>Advanced reverse osmosis technology with pre-filtration, membrane processing, and post-treatment stages ensuring comprehensive contaminant removal including TDS, bacteria, viruses, and heavy metals.</p>
+                <p>Advanced reverse osmosis technology with pre-filtration, membrane processing, and post-treatment stages ensuring comprehensive contaminant removal.</p>
             </div>
 
             <div class="feature-card fade-in">
                 <div class="feature-icon">🔬</div>
                 <h3>Laboratory Tested</h3>
-                <p>Every system undergoes rigorous testing protocols and quality assurance procedures. Certified to meet WHO, BIS, and ISO standards for water purity and system performance.</p>
+                <p>Every system undergoes rigorous testing protocols. Certified to meet WHO, BIS, and ISO standards for water purity.</p>
             </div>
 
             <div class="feature-card fade-in">
                 <div class="feature-icon">⚙️</div>
                 <h3>Automated Operation</h3>
-                <p>PLC-based control systems with real-time monitoring, automatic flushing, pressure regulation, and self-diagnostic capabilities for optimal performance and minimal manual intervention.</p>
+                <p>PLC-based control systems with real-time monitoring, automatic flushing, and self-diagnostic capabilities.</p>
             </div>
 
             <div class="feature-card fade-in">
                 <div class="feature-icon">💰</div>
                 <h3>Cost Optimization</h3>
-                <p>Significantly reduce operational expenses through energy-efficient designs, high recovery rates, and elimination of bottled water procurement. Achieve ROI within 18-24 months.</p>
+                <p>Reduce operational expenses through energy-efficient designs and high recovery rates. ROI within 18-24 months.</p>
             </div>
 
             <div class="feature-card fade-in">
                 <div class="feature-icon">🛡️</div>
                 <h3>Comprehensive Warranty</h3>
-                <p>Industry-leading warranty coverage with annual maintenance contracts available. Dedicated service network ensures rapid response times and maximum uptime for critical operations.</p>
+                <p>Industry-leading warranty coverage with annual maintenance contracts. Dedicated service network ensures maximum uptime.</p>
             </div>
 
             <div class="feature-card fade-in">
                 <div class="feature-icon">🌍</div>
                 <h3>Sustainable Solutions</h3>
-                <p>Environmentally responsible water treatment reducing plastic waste, implementing water recycling capabilities, and utilizing energy recovery systems for reduced carbon footprint.</p>
+                <p>Environmentally responsible water treatment reducing plastic waste and implementing water recycling capabilities.</p>
             </div>
         </div>
     </section>
@@ -1327,47 +952,25 @@
         <div class="section-header">
             <div class="section-label">Product Portfolio</div>
             <h2 class="section-title">Comprehensive Water Treatment Systems</h2>
-            <p class="section-description">Engineered solutions for commercial, industrial, and institutional applications with customizable configurations.</p>
+            <p class="section-description">Engineered solutions for commercial, industrial, and institutional applications.</p>
         </div>
 
         <div class="products-grid">
             <div class="product-card fade-in">
                 <div class="product-header">
                     <h3>Commercial RO Plants</h3>
-                    <div class="product-capacity">Capacity: 50 LPH to 10,000 LPH</div>
+                    <div class="product-capacity">50 LPH to 10,000 LPH</div>
                 </div>
                 <div class="product-body">
-                    <p class="product-description">High-performance reverse osmosis systems designed for hotels, restaurants, offices, educational institutions, and healthcare facilities requiring consistent pure water supply.</p>
+                    <p class="product-description">High-performance systems for hotels, restaurants, offices, and healthcare facilities requiring consistent pure water supply.</p>
                     <ul class="product-features">
-                        <li>Fully automated operation with minimal supervision</li>
-                        <li>High recovery rate up to 75% reducing waste</li>
-                        <li>Integrated TDS controller for customized mineral content</li>
-                        <li>Stainless steel 304/316 construction for durability</li>
-                        <li>Digital monitoring with alarm systems</li>
-                        <li>Pre-filtration with sediment and carbon filters</li>
-                        <li>UV sterilization option for complete protection</li>
+                        <li>High-pressure membranes</li>
+                        <li>Advanced pre-treatment systems</li>
+                        <li>PLC-based automation</li>
+                        <li>Remote monitoring enabled</li>
+                        <li>CIP system integrated</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Request Specifications</a>
-                </div>
-            </div>
-
-            <div class="product-card fade-in">
-                <div class="product-header">
-                    <h3>Industrial RO Systems</h3>
-                    <div class="product-capacity">Capacity: 1,000 LPH to 50,000 LPH</div>
-                </div>
-                <div class="product-body">
-                    <p class="product-description">Heavy-duty industrial water treatment plants for manufacturing, pharmaceutical, chemical processing, and large-scale operations demanding continuous high-volume purification.</p>
-                    <ul class="product-features">
-                        <li>High-pressure membranes for enhanced performance</li>
-                        <li>Advanced multi-media pre-treatment systems</li>
-                        <li>PLC-based automation with SCADA integration</li>
-                        <li>Remote monitoring and diagnostics capability</li>
-                        <li>Clean-in-place (CIP) system for membrane maintenance</li>
-                        <li>Energy recovery devices for reduced operating costs</li>
-                        <li>Modular design for easy capacity expansion</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Request Specifications</a>
+                    <a href="#contact" class="btn btn-primary">Get Quote</a>
                 </div>
             </div>
 
@@ -1377,57 +980,51 @@
                     <div class="product-capacity">Custom Engineered Solutions</div>
                 </div>
                 <div class="product-body">
-                    <p class="product-description">Ion exchange water softening systems to eliminate hardness, prevent scale formation, protect equipment, improve process efficiency, and extend appliance lifespan.</p>
+                    <p class="product-description">Ion exchange systems to eliminate hardness, prevent scale formation, and protect equipment for extended lifespan.</p>
                     <ul class="product-features">
-                        <li>Ion exchange resin technology for effective softening</li>
-                        <li>Automatic regeneration with timer or meter control</li>
-                        <li>Salt-efficient brine system reducing operational costs</li>
-                        <li>Compact footprint for space-constrained installations</li>
-                        <li>Long-lasting premium grade resins</li>
-                        <li>Bypass valve for maintenance without downtime</li>
-                        <li>Hardness testing and monitoring equipment</li>
+                        <li>Ion exchange technology</li>
+                        <li>Automatic regeneration</li>
+                        <li>Salt-efficient design</li>
+                        <li>Compact footprint</li>
+                        <li>Long-lasting resins</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Request Specifications</a>
+                    <a href="#contact" class="btn btn-primary">Get Quote</a>
                 </div>
             </div>
 
             <div class="product-card fade-in">
                 <div class="product-header">
                     <h3>Ultra Filtration Plants</h3>
-                    <div class="product-capacity">Capacity: 100 LPH to 20,000 LPH</div>
+                    <div class="product-capacity">100 LPH to 20,000 LPH</div>
                 </div>
                 <div class="product-body">
-                    <p class="product-description">Advanced membrane filtration systems utilizing 0.01 micron hollow fiber membranes for removal of suspended solids, bacteria, viruses, and colloidal matter without chemical addition.</p>
+                    <p class="product-description">Advanced membrane filtration for removing suspended solids, bacteria, and viruses without chemical addition.</p>
                     <ul class="product-features">
-                        <li>0.01 micron precision filtration technology</li>
-                        <li>Chemical-free purification process</li>
-                        <li>High flow rates with consistent quality</li>
-                        <li>Low energy consumption and operating costs</li>
-                        <li>Minimal wastewater generation</li>
-                        <li>Automated backwash for membrane cleaning</li>
-                        <li>Suitable for surface water and pre-RO treatment</li>
+                        <li>0.01 micron filtration</li>
+                        <li>Chemical-free process</li>
+                        <li>High flow rates</li>
+                        <li>Low energy consumption</li>
+                        <li>Minimal wastewater</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Request Specifications</a>
+                    <a href="#contact" class="btn btn-primary">Get Quote</a>
                 </div>
             </div>
 
             <div class="product-card fade-in">
                 <div class="product-header">
                     <h3>Demineralization Plants</h3>
-                    <div class="product-capacity">Capacity: 100 LPH to 10,000 LPH</div>
+                    <div class="product-capacity">100 LPH to 10,000 LPH</div>
                 </div>
                 <div class="product-body">
-                    <p class="product-description">High-purity demineralized water production for laboratories, pharmaceuticals, boiler feed, battery manufacturing, and precision electronics requiring zero TDS water.</p>
+                    <p class="product-description">High-purity demineralized water for laboratories, pharmaceuticals, and precision manufacturing requiring zero TDS.</p>
                     <ul class="product-features">
-                        <li>Zero TDS output for critical applications</li>
-                        <li>Two-bed or mixed-bed ion exchange design</li>
-                        <li>Automatic regeneration sequencing</li>
-                        <li>High purity standards up to 18.2 MΩ-cm</li>
-                        <li>Corrosion-resistant FRP and UPVC materials</li>
-                        <li>Conductivity monitoring with alarms</li>
-                        <li>Acid and alkali regeneration automation</li>
+                        <li>Zero TDS output</li>
+                        <li>Two-bed or mixed-bed design</li>
+                        <li>Automatic regeneration</li>
+                        <li>High purity standards</li>
+                        <li>Corrosion-resistant materials</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Request Specifications</a>
+                    <a href="#contact" class="btn btn-primary">Get Quote</a>
                 </div>
             </div>
 
@@ -1437,100 +1034,15 @@
                     <div class="product-capacity">Customized Turnkey Solutions</div>
                 </div>
                 <div class="product-body">
-                    <p class="product-description">Comprehensive wastewater treatment and recycling systems ensuring environmental compliance, sustainable water management, and zero liquid discharge capabilities.</p>
+                    <p class="product-description">Comprehensive wastewater treatment and recycling systems ensuring environmental compliance and sustainable water management.</p>
                     <ul class="product-features">
-                        <li>Biological and chemical treatment options</li>
-                        <li>Zero liquid discharge (ZLD) configurations</li>
-                        <li>Water recycling and reuse capabilities</li>
-                        <li>Regulatory compliance with CPCB/SPCB norms</li>
-                        <li>Modular and scalable system design</li>
-                        <li>Sludge dewatering and disposal systems</li>
-                        <li>Online monitoring and data logging</li>
+                        <li>Biological treatment options</li>
+                        <li>Zero liquid discharge</li>
+                        <li>Water recycling capability</li>
+                        <li>Regulatory compliance</li>
+                        <li>Modular design</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Request Specifications</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process" id="process">
-        <div class="process-container">
-            <div class="section-header">
-                <div class="section-label">How We Work</div>
-                <h2 class="section-title">Streamlined Implementation Process</h2>
-                <p class="section-description">From consultation to installation, our systematic approach ensures successful project delivery.</p>
-            </div>
-
-            <div class="process-grid">
-                <div class="process-step fade-in">
-                    <div class="process-number">01</div>
-                    <h3>Consultation & Assessment</h3>
-                    <p>Comprehensive water analysis, requirement evaluation, and site assessment to design optimal solutions.</p>
-                </div>
-
-                <div class="process-step fade-in">
-                    <div class="process-number">02</div>
-                    <h3>System Design</h3>
-                    <p>Custom engineering and detailed system specifications tailored to your exact requirements and constraints.</p>
-                </div>
-
-                <div class="process-step fade-in">
-                    <div class="process-number">03</div>
-                    <h3>Manufacturing & Testing</h3>
-                    <p>In-house fabrication with stringent quality control and performance testing before dispatch.</p>
-                </div>
-
-                <div class="process-step fade-in">
-                    <div class="process-number">04</div>
-                    <h3>Installation & Support</h3>
-                    <p>Professional installation, commissioning, operator training, and ongoing maintenance support.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-container">
-            <div class="about-content">
-                <h2>Engineering Excellence in Water Treatment</h2>
-                <p>WePureIt is a premier manufacturer and supplier of advanced commercial and industrial water treatment solutions. We specialize in designing, engineering, and implementing comprehensive water purification systems that meet the most demanding quality standards.</p>
-                
-                <p>Our team of experienced engineers and water treatment specialists brings decades of combined expertise to every project. We understand that water quality is critical to your operations, product quality, and the health of your workforce and customers.</p>
-                
-                <p>From initial consultation through installation and ongoing support, we partner with businesses across hospitality, healthcare, manufacturing, food & beverage, pharmaceuticals, and numerous other industries to deliver reliable, efficient, and sustainable water treatment solutions.</p>
-
-                <div class="about-metrics">
-                    <div class="metric-box">
-                        <div class="metric-value">15+</div>
-                        <div class="metric-label">Years Industry Experience</div>
-                    </div>
-                    <div class="metric-box">
-                        <div class="metric-value">500+</div>
-                        <div class="metric-label">Successful Installations</div>
-                    </div>
-                    <div class="metric-box">
-                        <div class="metric-value">98%</div>
-                        <div class="metric-label">Client Satisfaction Rate</div>
-                    </div>
-                    <div class="metric-box">
-                        <div class="metric-value">24/7</div>
-                        <div class="metric-label">Technical Support</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="about-visual fade-in">
-                <div style="background: rgba(255,255,255,0.1); padding: 3rem; border-radius: 12px; backdrop-filter: blur(10px);">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">Industry Certifications</h3>
-                    <ul style="list-style: none; line-height: 2.5;">
-                        <li>✓ ISO 9001:2015 Certified</li>
-                        <li>✓ BIS Standards Compliant</li>
-                        <li>✓ WHO Guidelines Adherent</li>
-                        <li>✓ CPCB Approved Systems</li>
-                        <li>✓ CE Marked Equipment</li>
-                    </ul>
+                    <a href="#contact" class="btn btn-primary">Get Quote</a>
                 </div>
             </div>
         </div>
@@ -1538,44 +1050,42 @@
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="contact-container">
-            <div class="section-header">
-                <div class="section-label">Get In Touch</div>
-                <h2 class="section-title">Connect With Our Experts</h2>
-                <p class="section-description">Our team is ready to discuss your water treatment requirements and provide customized solutions.</p>
+        <div class="section-header">
+            <div class="section-label">Get In Touch</div>
+            <h2 class="section-title">Connect With Our Experts</h2>
+            <p class="section-description">Our team is ready to discuss your water treatment requirements and provide customized solutions.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card fade-in">
+                <div class="contact-icon">📞</div>
+                <h3>Dealer Inquiry</h3>
+                <p>Partnership & Distribution</p>
+                <a href="tel:+919873737498">+91 98737 37498</a>
             </div>
 
-            <div class="contact-grid">
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">📞</div>
-                    <h3>Dealer Inquiry</h3>
-                    <p>Partnership & Distribution</p>
-                    <a href="tel:+919873737498">+91 98737 37498</a>
-                </div>
-
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">💬</div>
-                    <h3>Customer Care</h3>
-                    <p>Product Support & Service</p>
-                    <a href="tel:+919873737497">+91 98737 37497</a>
-                </div>
-
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">✉️</div>
-                    <h3>Email Support</h3>
-                    <p>Inquiries & Quotations</p>
-                    <a href="mailto:sales@wepureit.in">sales@wepureit.in</a>
-                </div>
+            <div class="contact-card fade-in">
+                <div class="contact-icon">💬</div>
+                <h3>Customer Care</h3>
+                <p>Product Support & Service</p>
+                <a href="tel:+919873737497">+91 98737 37497</a>
             </div>
 
-            <div style="text-align: center; margin-top: 4rem;">
-                <a href="mailto:sales@wepureit.in" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;">Request Free Consultation</a>
+            <div class="contact-card fade-in">
+                <div class="contact-icon">✉️</div>
+                <h3>Email Support</h3>
+                <p>Inquiries & Quotations</p>
+                <a href="mailto:sales@wepureit.in">sales@wepureit.in</a>
             </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="mailto:sales@wepureit.in" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;">Request Free Consultation</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="about">
         <div class="footer-container">
             <div class="footer-section">
                 <h3>WePureIt</h3>
@@ -1589,8 +1099,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#products">Products</a></li>
-                    <li><a href="#process">Process</a></li>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
 
@@ -1636,27 +1145,22 @@
 
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
-        let lastScroll = 0;
         
         window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
+            if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-            
-            lastScroll = currentScroll;
         });
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offsetTop = target.offsetTop - 100;
+                    const offsetTop = target.offsetTop - 80;
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -1668,7 +1172,7 @@
         // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -1683,13 +1187,24 @@
         document.querySelectorAll('.fade-in').forEach(element => {
             observer.observe(element);
         });
-
-        // Prevent default behavior for demo links
-        document.querySelectorAll('a[href="#"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-            });
-        });
     </script>
 </body>
-</html>
+</html> class="product-features">
+                        <li>Fully automated operation</li>
+                        <li>High recovery rate up to 75%</li>
+                        <li>Integrated TDS controller</li>
+                        <li>Stainless steel construction</li>
+                        <li>Digital monitoring systems</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Get Quote</a>
+                </div>
+            </div>
+
+            <div class="product-card fade-in">
+                <div class="product-header">
+                    <h3>Industrial RO Systems</h3>
+                    <div class="product-capacity">1,000 LPH to 50,000 LPH</div>
+                </div>
+                <div class="product-body">
+                    <p class="product-description">Heavy-duty systems for manufacturing, pharmaceutical, and large-scale operations demanding continuous high-volume purification.</p>
+                    <ul
