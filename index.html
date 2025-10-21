@@ -917,6 +917,68 @@
                 height: 400px;
             }
 
+            .system-diagram {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .stage-box::after {
+                display: none;
+            }
+
+            .stage-box:nth-child(2)::after {
+                content: '↓';
+                display: block;
+                position: absolute;
+                left: 50%;
+                bottom: -1.8rem;
+                right: auto;
+                top: auto;
+                transform: translateX(-50%);
+                font-size: 1.5rem;
+                color: var(--primary-blue);
+                font-weight: bold;
+            }
+
+            .stage-box:nth-child(3)::before {
+                display: none;
+            }
+
+            .stage-box:nth-child(4)::after {
+                content: '↓';
+                display: block;
+                position: absolute;
+                left: 50%;
+                bottom: -1.8rem;
+                right: auto;
+                top: auto;
+                transform: translateX(-50%);
+                font-size: 1.5rem;
+                color: var(--primary-blue);
+                font-weight: bold;
+            }
+
+            .tech-badge {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.8rem;
+            }
+
+            .tech-badge:nth-child(2) {
+                top: 2%;
+                right: 2%;
+            }
+
+            .tech-badge:nth-child(3) {
+                bottom: 2%;
+                left: 2%;
+            }
+
+            .badge-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
             .products-grid {
                 grid-template-columns: 1fr;
             }
@@ -956,6 +1018,79 @@
                 font-size: 2.5rem;
             }
 
+            .hero-visual {
+                height: 500px;
+            }
+
+            .system-diagram {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 280px;
+            }
+
+            .stage-box {
+                padding: 1rem 0.8rem;
+            }
+
+            .stage-box::after {
+                content: '↓';
+                position: absolute;
+                left: 50%;
+                bottom: -1.5rem;
+                right: auto;
+                top: auto;
+                transform: translateX(-50%);
+                font-size: 1.2rem;
+                color: var(--primary-blue);
+                font-weight: bold;
+            }
+
+            .stage-box:nth-child(6)::after {
+                display: none;
+            }
+
+            .stage-box:nth-child(2)::after,
+            .stage-box:nth-child(3)::before,
+            .stage-box:nth-child(4)::after {
+                content: '↓';
+                display: block;
+            }
+
+            .stage-icon {
+                font-size: 1.5rem;
+            }
+
+            .stage-name {
+                font-size: 0.7rem;
+            }
+
+            .purity-indicator {
+                padding: 1rem 1.5rem;
+                font-size: 0.85rem;
+            }
+
+            .purity-text {
+                font-size: 1rem;
+            }
+
+            .tech-badge {
+                position: static;
+                margin-top: 1rem;
+            }
+
+            .tech-badge:nth-child(2),
+            .tech-badge:nth-child(3) {
+                position: static;
+            }
+
+            .mockup-placeholder {
+                padding: 2rem 1rem;
+            }
+
+            .ro-system-visual {
+                gap: 1.5rem;
+            }
+
             .features-grid {
                 grid-template-columns: 1fr;
             }
@@ -971,6 +1106,47 @@
 
             .process-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about-metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                height: 50px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
             }
         }
 
@@ -1078,6 +1254,20 @@
                                 <span class="purity-text">99.9%</span>
                             </div>
                         </div>
+
+                        <div class="tech-badge">
+                            <div class="badge-icon">⚡</div>
+                            <div>
+                                <div style="font-weight: 700;">Energy Efficient</div>
+                                <div style="font-size: 0.8rem; opacity: 0.7;">40% Less Power</div>
+                            </div>
+                        </div>
+                        <div class="tech-badge">
+                            <div class="badge-icon">🎯</div>
+                            <div>
+                                <div style="font-weight: 700;">ISO Certified</div>
+                                <div style="font-size: 0.8rem; opacity: 0.7;">Quality Assured</div>
+                            </div>
                         </div>
                     </div>
                 </div>
